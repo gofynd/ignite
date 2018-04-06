@@ -16,3 +16,5 @@ junit.xml
 credentials.dat
 .nox
 .DS_Store
+*.zip
+temp/*
