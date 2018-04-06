@@ -1,4 +1,5 @@
 ## Ignite - Dataproc Cluster Manager for Spark Jobs
+Ignite help you run and manage multiple Spark jobs with variable environment on Google Dataproc. For development phase, the same can be simulated on Docker. User can also configure slack to get cluster status updates.
 
 ### Features:
 1. Manage Dataproc Cluster
@@ -9,9 +10,23 @@
 
 ## Prerequisites:
 1. Create Google Service Account credentials with BigQuery, Dataproc, Storage (gcp_creds.json) with and place inside Ignite root directory. [link](https://cloud.google.com/compute/docs/access/create-enable-service-accounts-for-instances)
-2. Docker installed [link](https://docs.docker.com/install/linux/docker-ce/ubuntu/)
+2. Docker installed. [link](https://docs.docker.com/install/linux/docker-ce/ubuntu/)
 
 ## Quick Start
+
+### Project Config
+Put appropriate values in settings.py file. Note that this step is not mandatory to run locally.
+```python
+"project_id": "your-project-id"
+"region": "your-gcloud-region"
+"zone": "your-gcloud-zone"
+"gcs_bucket_name": "your-gcs-bucket-name"
+"SLACK_TOKEN": "your-slack-token"
+"SLACK_CHANNEL": "channel-name"
+"SLACK_USERNAME": "alerting-bot-name"
+"slack_enabled": False/True
+```
+Also put service account json file on project root directory named "gcp_creds.json".
 
 ### Required basic folder structure for spark job
 ```
@@ -56,7 +71,5 @@ To register new job, add job into `registered_job_flow` inside `job_managers/exe
 
 ##### Command to run the job flow- 
 1. To run SparkJob on Dataproc cluster - ```python job_managers/executor.py -j dataproc_sample_job```
-2. To run SparkJob on Docker environment - ```python job_managers/executor.py -j dataproc_sample_job -d true```
-
-
+2. To run SparkJob locally on Docker environment - ```python job_managers/executor.py -j dataproc_sample_job -d true```
 
