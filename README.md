@@ -1,5 +1,5 @@
 ## Ignite - Dataproc Cluster Manager for Spark Jobs
-Ignite help you run and manage multiple Spark jobs with variable environment on Google Dataproc. For development phase, the same can be simulated on Docker. User can also configure slack to get cluster status updates.
+Ignite helps you run and manage multiple Spark jobs with variable environment on Google Dataproc. For development phase, the same can be simulated on Docker. User can also configure slack to get cluster status updates.
 
 ### Features:
 1. Manage Dataproc Cluster
